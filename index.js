@@ -6,9 +6,11 @@ import AuthRouter from "./routes/AuthRouter.js";
 import FavoriteRouter from "./routes/FavoriteRouter.js";
 import SearchRouter from "./routes/SearchRouter.js";
 import cors from "cors";
+import * as dotenv from "dotenv";
+dotenv.config();
 
-const port = 5000;
-const DB_URL = `mongodb+srv://imzape:wwwwww@slowtape.fyebpcb.mongodb.net/?retryWrites=true&w=majority`;
+const port = process.env.PORT || 5000;
+const DB_URL = process.env.DB_URL;
 
 const app = express();
 app.use(cors());
