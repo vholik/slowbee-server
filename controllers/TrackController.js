@@ -13,7 +13,8 @@ class TrackController {
       const user = await User.findById(comment.user);
 
       const noPhoto =
-        "https://firebasestorage.googleapis.com/v0/b/slowtape-dcf48.appspot.com/o/cover%2F4.552695445838303no-photo.png?alt=media&token=01923f33-9106-44bf-bf3a-73b24f45d413";
+        "https://upload.wikimedia.org/wikipedia/commons/2/2f/No-photo-m.png";
+
       const createdComment = comment.toObject();
       res.json({
         ...createdComment,
