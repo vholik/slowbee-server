@@ -16,6 +16,6 @@ export default async function (req, res, next) {
     req.user = user;
     next();
   } catch (error) {
-    return res.status(403).json({ message: "User is not authorized" });
+    return res.status(403).json({ message: "User is not authorized " });
   }
 }
