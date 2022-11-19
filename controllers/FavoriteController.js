@@ -50,9 +50,7 @@ class FavoriteController {
         $push: { favorites: track },
       });
 
-      let modUser = await User.findById(user._id);
-
-      return res.json(modUser);
+      return res.json("Succesfully added to favorites");
     } catch (error) {
       res.status(500).json(error);
     }
