@@ -96,14 +96,7 @@ class TrackController {
       res.status(500).json(error);
     }
   }
-  async getFavorites(req, res) {
-    try {
-      const user = req.user;
-      return res.json(user);
-    } catch (error) {
-      res.status(500).json(error);
-    }
-  }
+
   async update(req, res) {
     try {
       const { id } = req.params;

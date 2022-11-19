@@ -46,9 +46,13 @@ class FavoriteController {
         return res.json({ message: "Track removed succesfully" });
       }
 
-      User.findByIdAndUpdate(user._id, { $push: { favorites: track } });
+      await User.findByIdAndUpdate(user._id, {
+        $push: { favorites: track },
+      });
 
-      return res.json("Track added to favorites succesfully");
+      let modUser = await User.findById(user._id);
+
+      return res.json(modUser);
     } catch (error) {
       res.status(500).json(error);
     }
